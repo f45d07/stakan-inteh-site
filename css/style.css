@@ -175,6 +175,8 @@ h3 {
   margin-bottom: 67px;
 }
 
+
+
 /* line 118, ../../Arafath/CL/Cl November/224. Interior Design/HTML/scss/theme-default.scss */
 .black-bg {
   background: #020c26 !important;
@@ -9336,6 +9338,77 @@ h6 {
   opacity: 1;
   padding: 10px;
   border-radius: 10px;
+}
+
+/* discounts page */
+
+.carousel_discounts * {
+  color: white !important;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.boxed-btn-fxd-w {
+  width: 250px;
+}
+
+/* contacts page */
+
+.map-contacts {
+  height: 500px;
+}
+
+.map-contacts * {
+  z-index: 1 !important;
+}
+
+.contact-form label {
+  color: #2e4453 !important;
+}
+
+/* discount page */
+
+#blackout {
+  background: rgba(102, 102, 102, 0.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 1000;
+}
+
+#box {
+  width: 350px;
+  height: 50px;
+  text-align: center;
+  padding: 15px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+#box * {
+  color: white;
+}
+
+#blackout:target {display: block;}
+
+.close {
+  display: inline-block;  
+  color: white;
+  padding: 0 12px;
+  margin: 10px;
+}
+
+/* cart page */
+
+.cart {
+  padding: 25px;
+  background-color: #FFD35A;
 }
 
 /*# sourceMappingURL=style.css.map */

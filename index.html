@@ -2,7 +2,7 @@
 <html class="no-js" lang="zxx">
 
 <head>
-    <meta charset="ansi">
+    <meta charset="windows-1251">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Главная страница</title>
     <meta name="description" content="">
@@ -33,45 +33,51 @@
 <body>
     <!-- header-start -->
     <header>
-        <div class="header-area header-bg">
-            <div id="sticky-header" class="main-header-area">
-                <div class="container-fluid">
-                    <div class="header_bottom_border">
-                        <div class="row align-items-center">
-                            <div class="col-xl-3 col-lg-2">
-                                <div class="logo">
-                                    <a href="index.html">
-                                        <img src="img/the-doors.png" width="210" height="50" alt="">
-                                    </a>
+            <div class="header-area header-bg">
+                <div id="sticky-header" class="main-header-area">
+                    <div class="container-fluid">
+                        <div class="header_bottom_border">
+                            <div class="row align-items-center">
+                                <div class="col-xl-3 col-lg-2">
+                                    <div class="logo">
+                                        <a href="index.html">
+                                            <img src="img/the-doors.png" width="210" height="50" alt="">
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-7">
-                                <div class="main-menu  d-none d-lg-block">
+                                <div class="col-xl-4 col-lg-5">
+                                    <div class="main-menu  d-none d-lg-block">
+                                        <nav>
+                                            <ul id="navigation">
+                                                <li><a href="index.html#about">О компании</a></li>
+                                                <li><a href="index.html#catalogue">Каталог</a></li>                                            
+                                                <li><a href="discounts.html">Акции</a></li>
+                                                <li><a href="contacts.html">Контакты</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 col-lg-2">
                                     <nav>
-                                        <ul id="navigation">
-											<li><a href="#about">О компании</a></li>
-											<li><a href="#catalogue">Каталог</a></li>
-											<li><a href="contacts.html">Контакты</a></li>
-                                        </ul>
+                                        <a href="cart.html" class="boxed-btn3-line mt-10 boxed-btn-fxd-w">Корзина (<span id="count-carts-items"></span>)</a>
                                     </nav>
                                 </div>
-                            </div>
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
-                                        <ul><p>+ 7 (499) 863 - 93 - 43</ul>
-                                        <ul><p>Крупнейший магазин дверей в России</ul>
+                                            <ul><p>+ 7 (499) 863 - 93 - 43</ul>
+                                            <ul><p>Крупнейший магазин дверей в России</ul>
                                     </nav>
-                            </div>
-                            <div class="col-12">
-                                <div class="mobile_menu d-block d-lg-none"></div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="mobile_menu d-block d-lg-none"></div>
+                                </div>
                             </div>
                         </div>
+    
                     </div>
-
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
     <!-- header-end -->
 
     <!-- slider_area_start -->
@@ -260,6 +266,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 
     <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
     <script>
         function collision($div1, $div2) {
             var x1 = $div1.offset().left;

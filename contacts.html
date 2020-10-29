@@ -2,7 +2,7 @@
 <html class="no-js" lang="zxx">
 
 <head>
-    <meta charset="ansi">
+    <meta charset="windows-1251">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Контакты</title>
     <meta name="description" content="">
@@ -27,51 +27,61 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
 
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 
 <body>
     <!-- header-start -->
     <header>
-        <div class="header-area header-bg">
-            <div id="sticky-header" class="main-header-area">
-                <div class="container-fluid">
-                    <div class="header_bottom_border">
-                        <div class="row align-items-center">
-                            <div class="col-xl-3 col-lg-2">
-                                <div class="logo">
-                                    <a href="index.html">
-                                        <img src="img/the-doors.png" width="210" height="50" alt="">
-                                    </a>
+            <div class="header-area header-bg">
+                <div id="sticky-header" class="main-header-area">
+                    <div class="container-fluid">
+                        <div class="header_bottom_border">
+                            <div class="row align-items-center">
+                                <div class="col-xl-3 col-lg-2">
+                                    <div class="logo">
+                                        <a href="index.html">
+                                            <img src="img/the-doors.png" width="210" height="50" alt="">
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-7">
-                                <div class="main-menu  d-none d-lg-block">
+                                <div class="col-xl-4 col-lg-5">
+                                    <div class="main-menu  d-none d-lg-block">
+                                        <nav>
+                                            <ul id="navigation">
+                                                <li><a href="index.html#about">О компании</a></li>
+                                                <li><a href="index.html#catalogue">Каталог</a></li>                                            
+                                                <li><a href="discounts.html">Акции</a></li>
+                                                <li><a href="contacts.html">Контакты</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 col-lg-2">
                                     <nav>
-                                        <ul id="navigation">
-											<li><a href="index.html#about">О компании</a></li>
-											<li><a href="index.html#catalogue">Каталог</a></li>
-											<li><a href="contacts.html">Контакты</a></li>
-                                        </ul>
+                                        <a href="cart.html" class="boxed-btn3-line mt-10 boxed-btn-fxd-w">Корзина (<span id="count-carts-items"></span>)</a>
                                     </nav>
                                 </div>
-                            </div>
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
-                                        <ul><p>+ 7 (499) 863 - 93 - 43</ul>
-                                        <ul><p>Крупнейший магазин дверей в России</ul>
+                                            <ul><p>+ 7 (499) 863 - 93 - 43</ul>
+                                            <ul><p>Крупнейший магазин дверей в России</ul>
                                     </nav>
-                            </div>
-                            <div class="col-12">
-                                <div class="mobile_menu d-block d-lg-none"></div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="mobile_menu d-block d-lg-none"></div>
+                                </div>
                             </div>
                         </div>
+    
                     </div>
-
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
     
 	<!-- КОНТАКТЫ -->
 	<p><a name="catalogue"></a></p> 
@@ -81,9 +91,23 @@
                 <div class="col-xl-12">
                     <div class="section_title mb-70">
                         <h3>Контакты</h3>
-						<p>Текст</p>
-						<p>Текст</p>
-						<p>Текст</p>
+                        <div id="map-contacts" class="map-contacts"></div>
+                        <div class="mt-50">
+                            <h4> + 7 (499) 863 - 93 - 43</h4>
+                            <h4>support@thedoors.com</h4>
+                        </div>
+                        <h3>Напишите нам</h3>
+                        <form class="contact-form mt-50">
+                            <div class="form-group">
+                                <label for="EmailInput">Ваша электронная почта</label>
+                                <input type="email" class="form-control" id="EmailInput" placeholder="name@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="MessTextarea">Ваше сообщение</label>
+                                <textarea class="form-control" id="MessTextarea" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Отправить сообщение</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -131,41 +155,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- link that opens popup -->
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script>
-
-    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"> </script>
-    <!-- JS here -->
-    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-    <!-- <script src="js/vendor/jquery-1.12.4.min.js"></script> -->
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/ajax-form.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/scrollIt.js"></script>
-    <script src="js/jquery.scrollUp.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/nice-select.min.js"></script>
-    <script src="js/jquery.slicknav.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <!-- <script src="js/gijgo.min.js"></script> -->
-    <script src="js/slick.min.js"></script>
-   
-
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script> 
     
     <!--contact js-->
-    <script src="js/contact.js"></script>
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jquery.form.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/mail-script.js"></script>
 
-
-    <script src="js/main.js"></script>
+    <script src="js/discounts.js"></script>
+    <script src="js/cart.js"></script>
     <script>
         function collision($div1, $div2) {
             var x1 = $div1.offset().left;
@@ -186,52 +181,20 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             var string = reg.exec(href);
             return string ? string[1] : null;
         };
-        // End url 
-        // // slider call
-        $('#slider').slider({
-            range: true,
-            min: 20,
-            max: 200,
-            step: 1,
-            values: [getQueryString('minval') ? getQueryString('minval') : 20, getQueryString('maxval') ?
-                getQueryString('maxval') :200
-            ],
+       
+        /* map */
 
-            slide: function (event, ui) {
+        var map_contacts = L.map('map-contacts').setView([55.7912, 37.6038], 15);
+        L.tileLayer('https://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: 'your.mapbox.access.token'
+        }).addTo(map_contacts);
+        var marker = L.marker([55.7898, 37.5950]).addTo(map_contacts);
 
-                $('.ui-slider-handle:eq(0) .price-range-min').html( ui.values[0] + 'K');
-                $('.ui-slider-handle:eq(1) .price-range-max').html( ui.values[1] + 'K');
-                $('.price-range-both').html('<i>K' + ui.values[0] + ' - </i>K' + ui.values[1]);
-
-                // get values of min and max
-                $("#minval").val(ui.values[0]);
-                $("#maxval").val(ui.values[1]);
-
-                if (ui.values[0] == ui.values[1]) {
-                    $('.price-range-both i').css('display', 'none');
-                } else {
-                    $('.price-range-both i').css('display', 'inline');
-                }
-
-                if (collision($('.price-range-min'), $('.price-range-max')) == true) {
-                    $('.price-range-min, .price-range-max').css('opacity', '0');
-                    $('.price-range-both').css('display', 'block');
-                } else {
-                    $('.price-range-min, .price-range-max').css('opacity', '1');
-                    $('.price-range-both').css('display', 'none');
-                }
-
-            }
-        });
-
-        $('.ui-slider-range').append('<span class="price-range-both value"><i>' + $('#slider').slider('values', 0) +
-            ' - </i>' + $('#slider').slider('values', 1) + '</span>');
-
-        $('.ui-slider-handle:eq(0)').append('<span class="price-range-min value">' + $('#slider').slider('values', 0) +
-            'k</span>');
-
-        $('.ui-slider-handle:eq(1)').append('<span class="price-range-max value">' + $('#slider').slider('values', 1) +
-            'k</span>');
     </script>
 </body>
 
