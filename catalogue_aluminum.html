@@ -31,6 +31,17 @@
 </head>
 
 <body>
+    <div id="blackout">
+        <div id="box">
+            <h3 onclick="HidePopUp()">
+                <span>Товар добавлен в корзину                    
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="mt-10">
+                        <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                    </svg>                
+                </span>
+            </h3>            
+        </div>
+    </div>
     <!-- header-start -->
     <header>
             <div class="header-area header-bg">
@@ -86,15 +97,65 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="section_title mb-70">
-                        <h3>Алюиминиевые двери</h3>
-						<p>Элемент №1</p>
-						<p>Элемент №2</p>
-						<p>Элемент №3</p>
+                        <h3>Алюминиевые двери</h3>
+						<div class="row align-items-center mb-80">
+                <div class="col-lg-4 col-md-3">
+                    <div class="thumb">
+                        <img src="img/doors/a1.png" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6">
+                    <div class="work_info pl-68">
+                        <h3> “ХОЛОДНЫЕ” АЛЮМИНИЕВЫЕ ДВЕРИ</h3>
+                        <p>&bull;Изготавливаются из алюминиевых профилей без термомоста.<br />
+			&bull;Толщина стекла - 5-6 мм, стеклопакетов - 20-26 мм.<br />
+			&bull;Стекло варианты: прозрачное бесцветное, матовое бесцветное.<br />
+            <div class="price row"><div class="col-lg-6 col-md-6">Цена: 7990р.</div><div class="col-lg-6 col-md-6""><a href="javascript:AddToCart('ХОЛОДНЫЕ АЛЮМИНИЕВЫЕ ДВЕРИ', 7990)" class="boxed-btn3-line mt-10 boxed-btn-fxd-w">В корзину</a></div></div>
+                        
+                    </div>
+                </div>
+            </div>
+						<div class="row align-items-center mb-80">
+                <div class="col-lg-4 col-md-3">
+                    <div class="thumb">
+                        <img src="img/doors/a2.png" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6">
+                    <div class="work_info pl-68">
+                        <h3> “ТЁПЛЫЕ” АЛЮМИНИЕВЫЕ ДВЕРИ</h3>
+                        <p>&bull;Изготавливаются из двух алюминиевых профилей без термомоста, соединяемых в заготовку полиамидными перемычками.<br />
+			&bull;Толщина стекла - 5-6 мм, стеклопакетов - 20-38 мм.<br />
+			&bull;Стекло варианты: прозрачное бесцветное, матовое бесцветное.<br />
+            <div class="price row"><div class="col-lg-6 col-md-6">Цена: 11990р.</div><div class="col-lg-6 col-md-6""><a href="javascript:AddToCart('ТЁПЛЫЕ АЛЮМИНИЕВЫЕ ДВЕРИ', 11990)" class="boxed-btn3-line mt-10 boxed-btn-fxd-w">В корзину</a></div></div>
+                        
+                    </div>
+                </div>
+            </div>
+						<div class="row align-items-center mb-80">
+                <div class="col-lg-4 col-md-3">
+                    <div class="thumb">
+                        <img src="img/doors/a3.png" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6">
+                    <div class="work_info pl-68">
+                        <h3> “МАЯТНИКОВЫЕ” АЛЮМИНИЕВЫЕ ДВЕРИ</h3>
+                        <p>&bull;Конструкция двери предполагает одновременное открывание створки как во внутрь, так и наружу.
+			&bull;Изготавливаются из алюминиевых профилей без термомоста.<br />
+			&bull;Толщина стекла - 5-6 мм, стеклопакетов - 20-26 мм.<br />
+			&bull;Стекло варианты: прозрачное бесцветное, матовое бесцветное.<br />
+            <div class="price row"><div class="col-lg-6 col-md-6">Цена: 13990р.</div><div class="col-lg-6 col-md-6""><a href="javascript:AddToCart('МАЯТНИКОВЫЕ АЛЮМИНИЕВЫЕ ДВЕРИ', 13990)" class="boxed-btn3-line mt-10 boxed-btn-fxd-w">В корзину</a></div></div>
+		    </div>
+                </div>
+            </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <!-- КОНЕЦ -->
 
     <!-- footer start -->
@@ -171,7 +232,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/mail-script.js"></script>
 
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js"></script> 
     <script src="js/cart.js"></script>
     <script>
         function collision($div1, $div2) {
@@ -193,52 +254,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             var string = reg.exec(href);
             return string ? string[1] : null;
         };
-        // End url 
-        // // slider call
-        $('#slider').slider({
-            range: true,
-            min: 20,
-            max: 200,
-            step: 1,
-            values: [getQueryString('minval') ? getQueryString('minval') : 20, getQueryString('maxval') ?
-                getQueryString('maxval') :200
-            ],
-
-            slide: function (event, ui) {
-
-                $('.ui-slider-handle:eq(0) .price-range-min').html( ui.values[0] + 'K');
-                $('.ui-slider-handle:eq(1) .price-range-max').html( ui.values[1] + 'K');
-                $('.price-range-both').html('<i>K' + ui.values[0] + ' - </i>K' + ui.values[1]);
-
-                // get values of min and max
-                $("#minval").val(ui.values[0]);
-                $("#maxval").val(ui.values[1]);
-
-                if (ui.values[0] == ui.values[1]) {
-                    $('.price-range-both i').css('display', 'none');
-                } else {
-                    $('.price-range-both i').css('display', 'inline');
-                }
-
-                if (collision($('.price-range-min'), $('.price-range-max')) == true) {
-                    $('.price-range-min, .price-range-max').css('opacity', '0');
-                    $('.price-range-both').css('display', 'block');
-                } else {
-                    $('.price-range-min, .price-range-max').css('opacity', '1');
-                    $('.price-range-both').css('display', 'none');
-                }
-
-            }
-        });
-
-        $('.ui-slider-range').append('<span class="price-range-both value"><i>' + $('#slider').slider('values', 0) +
-            ' - </i>' + $('#slider').slider('values', 1) + '</span>');
-
-        $('.ui-slider-handle:eq(0)').append('<span class="price-range-min value">' + $('#slider').slider('values', 0) +
-            'k</span>');
-
-        $('.ui-slider-handle:eq(1)').append('<span class="price-range-max value">' + $('#slider').slider('values', 1) +
-            'k</span>');
     </script>
 </body>
 

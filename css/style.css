@@ -9417,4 +9417,18 @@ nav .boxed-btn-fxd-w {
   padding: 14px 20px;
 }
 
+/* catalog page */
+
+.price {
+  align-items: center;
+}
+
+.price a {
+  padding: 10px 20px;
+  width: 200px;
+}
+
+.work_info > p {
+}
+
 /*# sourceMappingURL=style.css.map */
