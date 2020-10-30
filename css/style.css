@@ -9411,4 +9411,10 @@ h6 {
   background-color: #FFD35A;
 }
 
+nav .boxed-btn-fxd-w {
+  max-width: 135px;
+  white-space: nowrap;
+  padding: 14px 20px;
+}
+
 /*# sourceMappingURL=style.css.map */
