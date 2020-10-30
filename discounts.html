@@ -267,9 +267,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             localStorage.cart = JSON.stringify(old_cart_items); 
 
             var blackout = document.getElementById("blackout");
-            //blackout.style.display = "block";
+            blackout.style.display = "block";
 
-            //blackout.scrollIntoView({block: "center", behavior: "smooth"});
+            blackout.scrollIntoView({block: "center", behavior: "smooth"});
 
             setTimeout(() => document.location.reload(), 2000);
 
