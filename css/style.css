@@ -9412,7 +9412,7 @@ h6 {
 }
 
 nav .boxed-btn-fxd-w {
-  max-width: 135px;
+  max-width: 145px;
   white-space: nowrap;
   padding: 14px 20px;
 }
@@ -9431,4 +9431,14 @@ nav .boxed-btn-fxd-w {
 .work_info > p {
 }
 
+/* forms */
+
+.form-group input, textarea {
+  border: 1px solid #2e4453 !important;
+  border-radius: 0 !important;
+}
+
+#last-step-form {
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */

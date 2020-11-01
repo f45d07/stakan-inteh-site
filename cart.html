@@ -111,8 +111,19 @@
                                             </tr>                                            
                                         </tbody>
                                       </table>
-                        </div>
-                        <a href="#" class="boxed-btn3-line mt-10 boxed-btn-fxd-w">Оформить</a>
+                        </div>                        
+                        <a href="#" id="checkout-button" onclick="ShowLastStep()" class="boxed-btn3-line mt-10 boxed-btn-fxd-w">Оформить</a>
+                        <form id="last-step-form" class="contact-form mt-50">
+                            <div class="form-group">
+                                <label for="NameInput">Ваше имя</label>
+                                <input type="text" class="form-control" id="NameInput" placeholder="Имя">
+                            </div>
+                            <div class="form-group">
+                                <label for="PhoneInput">Ваш телефон</label>
+                                <input type="phone" class="form-control" id="PhoneInput" placeholder="+79001234567">
+                            </div>
+                            <button type="submit" class="btn btn-primary boxed-btn3-line">Завершить оформление</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -234,6 +245,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             document.location.reload();
 
             }
+        }
+
+        function ShowLastStep() {
+            document.getElementById("checkout-button").style.display = "none";
+            document.getElementById("last-step-form").style.display = "block";
         }
 
     </script>
