@@ -9417,6 +9417,14 @@ nav .boxed-btn-fxd-w {
   padding: 14px 20px;
 }
 
+#full-cart-items {
+  display: none;
+}
+
+#no-carts-items {
+  display: none;
+}
+
 /* catalog page */
 
 .price {

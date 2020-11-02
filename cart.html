@@ -95,24 +95,36 @@
                 <div class="col-xl-12">
                     <div class="section_title mb-70">
                         <h3>Ваша корзина</h3>
-                        <div class="cart mt-50">
-                                <table class="table cart-table" id="cart-table">
-                                        <thead>
-                                          <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Наименование</th>
-                                            <th scope="col">Цена</th>
-                                            <th scope="col">Действия</th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="no-cart-items" id="no-carts-items">
-                                                <td colspan="4" class="text-center">У вас нет покупок :( </td>
-                                            </tr>                                            
-                                        </tbody>
-                                      </table>
-                        </div>                        
-                        <a href="#" id="checkout-button" onclick="ShowLastStep()" class="boxed-btn3-line mt-10 boxed-btn-fxd-w">Оформить</a>
+                        <div id="no-carts-items">
+                            <div class="cart mt-50">
+                                У вас нет покупок.<br><br>
+                                Все покупки находятся в разделе "Каталог".<br><br>
+                                Если у вас есть какие-либо вопросы, вы можете написать нам в разделе "Контакты".
+                            </div>
+                            <a href="index.html#catalogue" onclick="" class="boxed-btn3-line mt-10 boxed-btn-fxd-w">Каталог</a>
+                            <a href="contacts.html" onclick="" class="boxed-btn3-line mt-10 boxed-btn-fxd-w">Контакты</a>
+                        </div>
+                        <div id="full-cart-items">
+                            <div class="cart mt-50">
+                                    <table class="table cart-table" id="cart-table">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Наименование</th>
+                                                <th scope="col">Цена</th>
+                                                <th scope="col">Действия</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="no-cart-items" id="no-carts-items">
+                                                    <td colspan="4" class="text-center">У вас нет покупок :( </td>
+                                                </tr>                                            
+                                            </tbody>
+                                        </table>
+                            </div> 
+                            <a href="#" id="checkout-button" onclick="ShowLastStep()" class="boxed-btn3-line mt-10 boxed-btn-fxd-w">Оформить</a>   
+                        </div>                    
+                        
                         <form id="last-step-form" class="contact-form mt-50">
                             <div class="form-group">
                                 <label for="NameInput">Ваше имя</label>
@@ -203,8 +215,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         if (localStorage.getItem("cart") !== null && localStorage.getItem("cart").length > 2) {
             cart_items = JSON.parse(localStorage.cart);
 
-            var no_items = document.getElementById("no-carts-items");
-            no_items.style.display = "none";
+            var no_items = document.getElementById("full-cart-items");
+            no_items.style.display = "block";            
             
             let index = 0;            
             var tableRef = document.getElementById("cart-table");
@@ -225,6 +237,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
                 index += 1;
             }
+        }
+
+        else {
+            var full_items = document.getElementById("no-carts-items");
+            full_items.style.display = "block";
         }
 
         function DeleteItem(index) {
