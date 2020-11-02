@@ -209,7 +209,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
        
         /* cart */
 
-        function HideEmptyCartInfo() {
+        function ShowEmptyCartInfo() {
             var no_items = document.getElementById("no-carts-items");
             no_items.style.display = "block";
         }
@@ -222,9 +222,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         if (localStorage.getItem("cart") !== null && localStorage.getItem("cart").length > 2) {
             cart_items = JSON.parse(localStorage.cart);
 
-            ShowFullCartInfo();
-            
-            HideEmptyCartInfo();          
+            ShowFullCartInfo();         
             
             let index = 0;            
             var tableRef = document.getElementById("cart-table");
@@ -247,8 +245,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             }
         }
 
-        else {
-            
+        else {         
+            ShowEmptyCartInfo(); 
         }
 
         function DeleteItem(index) {
