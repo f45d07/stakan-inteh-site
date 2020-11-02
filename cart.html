@@ -115,10 +115,7 @@
                                                 <th scope="col">Действия</th>
                                             </tr>
                                             </thead>
-                                            <tbody>
-                                                <tr class="no-cart-items" id="no-carts-items">
-                                                    <td colspan="4" class="text-center">У вас нет покупок :( </td>
-                                                </tr>                                            
+                                            <tbody>                                          
                                             </tbody>
                                         </table>
                             </div> 
@@ -212,11 +209,22 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
        
         /* cart */
 
+        function HideEmptyCartInfo() {
+            var no_items = document.getElementById("no-carts-items");
+            no_items.style.display = "block";
+        }
+
+        function ShowFullCartInfo() {
+            var full_items = document.getElementById("full-cart-items");
+            full_items.style.display = "block"; 
+        }
+
         if (localStorage.getItem("cart") !== null && localStorage.getItem("cart").length > 2) {
             cart_items = JSON.parse(localStorage.cart);
 
-            var no_items = document.getElementById("full-cart-items");
-            no_items.style.display = "block";            
+            ShowFullCartInfo();
+            
+            HideEmptyCartInfo();          
             
             let index = 0;            
             var tableRef = document.getElementById("cart-table");
@@ -240,8 +248,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         }
 
         else {
-            var full_items = document.getElementById("no-carts-items");
-            full_items.style.display = "block";
+            
         }
 
         function DeleteItem(index) {
